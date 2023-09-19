@@ -1,0 +1,166 @@
+
+/* definindo a aparência e o Layout dos elementos da Pokedex */
+
+.pokemons {
+    display: grid; /* Estamos informando que o modelo é uma grade */
+    grid-template-columns: 1fr; /* vai ter 1 coluna e que vai ocupar 1 fração */
+    list-style: none; /* vai retirar a numeração da lista */
+    /* Removendo o preenchimento e a margem padrão da lista, tornando-a mais limpa. */
+    padding: 0; /* Remove qualquer preenchimento interno */
+    margin: 0; /* Remove qualquer margem ao redor do elemento */
+}
+
+/* Cada uma dessas classes é associada a um tipo específico de Pokémon e define a cor de fundo para esse tipo */
+.normal {
+    background-color: #a6a877;
+}
+.grass {
+    background-color: #77c850;
+} 
+.fire {
+    background-color: #ee7f30;
+}  
+.water {
+    background-color: #678fee;
+}
+.electric {
+    background-color: #f7cf2e;
+} 
+.ice {
+    background-color: #98d5d7;
+} 
+.ground {
+    background-color: #dfbf69;
+} 
+.flying {
+    background-color: #a98ff0;
+} 
+.poison {
+    background-color: #a040a0;
+} 
+.fighting {
+    background-color: #bf3029;
+} 
+.psychic {
+    background-color: #f65687;
+} 
+.dark {
+    background-color: #725847;
+} 
+.rock {
+    background-color: #b8a137;
+} 
+.bug {
+    background-color: #a8b720;
+} 
+.ghost {
+    background-color: #6e5896;
+} 
+.steel {
+    background-color: #b9b7cf;
+} 
+.dragon {
+    background-color: #6f38f6;
+} 
+.fairy {
+    background-color: #f9aec7;
+} 
+
+/* Estilização da lista */
+.pokemon {
+    display: flex;/* Define o layout do Pokémon como um flex container, permitindo que os elementos dentro dele sejam organizados em uma coluna */
+    flex-direction: column; /* Define como coluna e coloca um embaixo do outro */
+    margin: .5rem; /* colocando espaçamento entre as grid */
+    padding: 1rem; /* colocando espaçamento 1rem emcima e embaixo */
+    border-radius: 1rem; /* arredondando a borda */
+    
+    /* height: 100px; /* aumentando o tamanho da lista */    
+}
+
+.pokemon .number {
+    color: #000; /* Define a cor do texto dos números dos Pokémon como preto */
+    opacity: 0.3; /* Define a opacidade. Isso torna o texto dos números mais transparente */
+    text-align: right; /* Alinha o texto dos números à direita */
+    font-size: .625rem; /* Define o tamanho da fonte dos números */
+}
+
+.pokemon .name {
+    text-transform: capitalize; /* deixando o texto com a primeira letra em maiusculo */
+    color: #fff; /* Colocando a cor do texto */
+    margin-bottom: .25rem; /* Essa margem cria um espaço vertical de 0,25 rem abaixo do nome do Pokémon, permitindo o espaçamento adequado entre o nome e outros elementos */
+
+}
+
+.pokemon .detail {
+    display: flex; /* Define o layout do contêiner como um flex container, permitindo que os elementos filhos (como botões de página) sejam organizados em uma linha horizontal. */
+    flex-direction: row; /* Define a direção da linha flex como horizontal (por padrão). */
+    align-items: center; /* Vai deixar o texto no centro */
+    justify-content: space-between; /* vai dar um espaçamento entre o texto e a imagem */
+}
+
+.pokemon .detail .types {
+    padding: 0; /* Remove qualquer preenchimento interno da lista de tipos, ou seja, não haverá espaço dentro da lista. */
+    margin: 0; /* Remove qualquer margem ao redor da lista de tipos, ou seja, não haverá espaço ao redor da lista. */
+    list-style: none; /* Remove os marcadores de lista padrão (como pontos ou números) da lista de tipos. */
+}
+
+.pokemon .detail .types .type {
+    color: #fff; /* Define a cor do texto do elemento como branco */
+    padding: .25rem .5rem; /* Ele cria espaço dentro do elemento .type tanto na parte superior/inferior quanto nas laterais. */
+    margin: .25rem 0; /* Ele cria espaço acima e abaixo do elemento .type, mas nenhum espaço nas laterais. */
+    font-size: .625rem; /* Define o tamanho da fonte do texto */
+    border-radius: 1rem; /* Vai deixar o borda mais arredondado, criando uma aparência mais suave */
+    filter: brightness(1.1); /* Aplica um efeito de brilho, aumentando seu brilho em 10%. Vai realçar a visibilidade ou destacar o elemento. */
+    text-align: center; /* Centraliza o texto, garantindo que o texto seja alinhado ao centro horizontalmente. */
+}
+
+/* A lista de imagem dos pokemons. */
+.pokemon .detail img {
+    max-width: 100%; /* faz com que a imagem não vase do tamanho maximo */
+    height: 70px; /* tamanho de altura fixo */
+    /* align-self: flex-end; faz com que somente a imagem fique para a direita */
+}
+
+/* Criando uma classe de paginação para estilizar o conteúdo apenas dessa classe. */
+.pagination {
+    display: flex; /* Define o layout do contêiner como um flex container, permitindo que os elementos filhos (como botões de página) sejam organizados em uma linha horizontal. */
+    flex-direction: row; /* Define a direção da linha flex como horizontal (por padrão). */
+    justify-content: center; /* Centraliza horizontalmente os elementos filho dentro do contêiner flex. */
+    align-items: center; /* Centraliza verticalmente os elementos filho dentro do contêiner flex. */
+    width: 100%; /* Faz com que a largura do contêiner seja igual à largura total disponível, preenchendo horizontalmente todo o espaço disponível. */
+    padding: 1rem; /* Adiciona preenchimento (espaço interno) ao redor do contêiner, criando um espaço em branco ao redor dos botões de página. */
+}
+
+/* Estilização dos botões de página dentro do contêiner de paginação. */
+.pagination button {
+    padding: .25rem .5rem; /* Define o preenchimento interno dos botões, criando um espaço dentro do botão para o texto */
+    margin: .25rem 0; /* Adiciona margem na parte superior e inferior dos botões, criando espaço entre eles verticalmente. */
+    font-size: .625rem; /* Define tamanho da fonte do texto */
+    color: #ffff; /* Define a Cor do texto do botão */
+    background-color: #6c79db; /* Define a Cor de fundo do botão */
+    border: none;
+    border-radius: 1rem; /* Adiciona cantos arredondados aos botões, criando uma aparência mais suave. */
+}
+
+/* Ajustando a quantidade de grid quando o tamanho da tela for pequena */
+@media screen and (min-width: 380px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr; /* vai ter 2 colunas e cada uma vai ocupar 1 fração */
+    }
+}
+
+/* Ajustando a quantidade de grid quando o tamanho da tela for media */
+@media screen and (min-width: 576px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr; /* vai ter 3 colunas e cada uma vai ocupar 1 fração */
+    }
+}
+
+/* Ajustando a quantidade de grid quando o tamanho da tela for grande */
+@media screen and (min-width: 992px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* vai ter 4 colunas e cada uma vai ocupar 1 fração */
+    }
+}
+
+
