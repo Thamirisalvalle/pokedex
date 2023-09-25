@@ -73,7 +73,10 @@
     margin: .5rem; /* colocando espaçamento entre as grid */
     padding: 1rem; /* colocando espaçamento 1rem emcima e embaixo */
     border-radius: 1rem; /* arredondando a borda */
-    
+    box-shadow: 9px 9px 27px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 9px 9px 27px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 9px 9px 27px 0px rgba(0,0,0,0.75); 
+     
     /* height: 100px; /* aumentando o tamanho da lista */    
 }
 
@@ -88,6 +91,7 @@
     text-transform: capitalize; /* deixando o texto com a primeira letra em maiusculo */
     color: #fff; /* Colocando a cor do texto */
     margin-bottom: .25rem; /* Essa margem cria um espaço vertical de 0,25 rem abaixo do nome do Pokémon, permitindo o espaçamento adequado entre o nome e outros elementos */
+    text-align: left;
 
 }
 
@@ -119,6 +123,7 @@
     max-width: 100%; /* faz com que a imagem não vase do tamanho maximo */
     height: 70px; /* tamanho de altura fixo */
     /* align-self: flex-end; faz com que somente a imagem fique para a direita */
+    
 }
 
 /* Criando uma classe de paginação para estilizar o conteúdo apenas dessa classe. */
@@ -141,6 +146,25 @@
     border: none;
     border-radius: 1rem; /* Adiciona cantos arredondados aos botões, criando uma aparência mais suave. */
 }
+
+.pokemon-card {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.2);
+}
+
+.pokemon-card > li {
+    background-image: url(../img/bg.png);
+    background-position: 105% 130%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
 
 /* Ajustando a quantidade de grid quando o tamanho da tela for pequena */
 @media screen and (min-width: 380px) {

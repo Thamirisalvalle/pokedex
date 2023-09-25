@@ -14,9 +14,11 @@ function convertPokemonToLi(pokemon) {
 
     /* aqui teremos o pokemon detalhado acrescentando a numeração na Class Number e detalhes do pokemon na Class Type, e vamos sincronizar as imagens com os respectivos pokemons  */
     return `
+        <button id="${pokemon.number}" class='pokemon-card'>
           <li class="pokemon ${pokemon.type}">            
               <span class="number">#${pokemon.number}</span>
               <span class="name">${pokemon.name}</span>
+            
                       
               <div class="detail">
                   <ol class="types">
